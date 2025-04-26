@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" href="./Images/FavIcon.png" type="image/x-icon" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólio João Victor Bueno</title>
-  <link rel="stylesheet" href="mainStyle.css" />
+  <link rel="icon" href="./Images/FavIcon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./indexStyle.css" />
 </head>
 
 <body>
+
+  <!-- Header / Navegação -->
   <header>
-    <img src="./Images/perfilImg.png" alt="Foto de perfil" class="profile-pic" />
-    <h1>João Victor Bueno</h1>
-    <p>C# Developer | Game Developer</p>
     <nav class="tab-nav">
       <button class="tab-button active" data-tab="about">Sobre Mim</button>
       <button class="tab-button" data-tab="projects">Projetos</button>
@@ -22,21 +20,34 @@
     </nav>
   </header>
 
+  <!-- Conteúdo principal -->
   <main>
+
+    <!-- Sobre Mim -->
     <section id="about" class="tab-content active">
-      <h2 class="section-title">Sobre Mim</h2>
-      <p style="text-align: center;">Oi! Me chamo João Victor, sou desenvolvedor de jogos e apaixonado por transformar ideias malucas em games desde os 8 anos de idade.
+      <div class="about-header">
+        <img src="./Images/perfilImg.png" alt="Foto de perfil" class="profile-pic" />
+        <div class="about-text">
+          <h1>João Victor Bueno</h1>
+          <p>C# Developer | Game Developer</p>
+        </div>
+      </div>
+
+      <h2 class="text-center">Sobre Mim</h2>
+      <p class="about-description">
+        Oi! Me chamo João Victor, sou desenvolvedor de jogos e apaixonado por transformar ideias malucas em games desde os 8 anos de idade.
         Hoje, com 19, estou no 3º semestre da faculdade de Jogos Digitais, já tendo concluído um curso técnico na área, e sigo me aventurando com Unity e C#.
         Tenho uma personalidade alegre e descontraída, gosto de trabalhar em equipe e acredito que o desenvolvimento de jogos deve ser tão divertido quanto jogar.
         Além de programar, também curto muito ajudar na organização dos projetos e no design dos níveis.
-        Amo fazer jogos desde criança e um dia espero poder mostrar e ensinar essa minha paixão a todos.  
+        Amo fazer jogos desde criança e um dia espero poder mostrar e ensinar essa minha paixão a todos.
       </p>
     </section>
 
+    <!-- Projetos -->
     <section id="projects" class="tab-content">
-      <h2 class="section-title">Projetos</h2>
+      <h2 class="text-center">Projetos</h2>
 
-      <!-- Carrossel para Facing Fear -->
+      <!-- Projeto: Facing Fear -->
       <div class="project">
         <h3>Facing Fear</h3>
 
@@ -44,9 +55,9 @@
           <div class="carousel-images">
             <img src="./Images/facinfFearImg1.png" alt="Facing Fear 1">
 
-            <!-- Adicionando vídeo ao carrossel -->
             <div class="video-slide">
-              <iframe src="https://www.youtube.com/embed/qt5UTe-cbPM?si=9qSaPvNoMM41vgRu"
+              <iframe 
+                src="https://www.youtube.com/embed/qt5UTe-cbPM?si=9qSaPvNoMM41vgRu"
                 title="Trailer Facing Fear"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen>
@@ -56,10 +67,10 @@
             <img src="./Images/facinfFearImg2.png" alt="Facing Fear 2">
             <img src="./Images/facinfFearImg3.png" alt="Facing Fear 3">
           </div>
-        
+
           <button class="carousel-button prev">❮</button>
           <button class="carousel-button next">❯</button>
-        
+
           <div class="tags">
             <span class="tag">Unity</span>
             <span class="tag">C#</span>
@@ -68,17 +79,20 @@
             <span class="tag">Cooperativo</span>
             <span class="tag">3D</span>
           </div>
-        </div>        
+        </div>
 
         <p>
-          Facing Fear é um jogo cooperativo de terror que desafia os jogadores a enfrentarem suas fobias enquanto exploram 
-          ambientes sombrios em busca de chaves para escapar. Como programador principal, implementei sistemas de jogabilidade 
-          e lógica de jogo, além de colaborar no design dos níveis para criar uma atmosfera imersiva. Também fui responsável 
-          por organizar e integrar as funcionalidades de multiplayer, garantindo uma experiência cooperativa fluida.</p>
-        <a href="https://garapagames.itch.io/facingfear" target="_blank"><button class="download-btn">Baixar no itch.io</button></a>
+          Facing Fear é um jogo cooperativo de terror que desafia os jogadores a enfrentarem suas fobias enquanto exploram ambientes sombrios em busca de chaves para escapar.
+          Como programador principal, implementei sistemas de jogabilidade e lógica de jogo, além de colaborar no design dos níveis para criar uma atmosfera imersiva.
+          Também fui responsável por organizar e integrar as funcionalidades de multiplayer, garantindo uma experiência cooperativa fluida.
+        </p>
+
+        <a href="https://garapagames.itch.io/facingfear" target="_blank">
+          <button class="download-btn">Baixar no itch.io</button>
+        </a>
       </div>
 
-      <!-- Carrossel para Bastard Rebels -->
+      <!-- Projeto: Bastard Rebels -->
       <div class="project">
         <h3>Bastard Rebels</h3>
 
@@ -102,15 +116,17 @@
         </div>
 
         <p>
-          Bastard Rebels é um jogo de plataforma em pixel art ambientado em um mundo distópico habitado por mutantes criados pela humanidade. 
-          Atuei como programador principal, desenvolvendo as mecânicas de movimentação, combate e interação com o ambiente. 
+          Bastard Rebels é um jogo de plataforma em pixel art ambientado em um mundo distópico habitado por mutantes criados pela humanidade.
+          Atuei como programador principal, desenvolvendo as mecânicas de movimentação, combate e interação com o ambiente.
           Contribuí significativamente para o design dos níveis, criando desafios que complementam a narrativa.
         </p>
 
-        <a href="https://garapagames.itch.io/bastard-rebels" target="_blank"><button class="download-btn">Baixar no itch.io</button></a>
+        <a href="https://garapagames.itch.io/bastard-rebels" target="_blank">
+          <button class="download-btn">Baixar no itch.io</button>
+        </a>
       </div>
 
-      <!-- Carrossel para Leo Capybara -->
+      <!-- Projeto: Leo Capybara -->
       <div class="project">
         <h3>Leo Capybara: Train Rescue</h3>
 
@@ -120,6 +136,7 @@
             <img src="./Images/leoCapybaraimg2.png" alt="Leo Capybara 2">
             <img src="./Images/leoCapybaraimg3.png" alt="Leo Capybara 3">
           </div>
+
           <button class="carousel-button prev">❮</button>
           <button class="carousel-button next">❯</button>
         </div>
@@ -132,34 +149,51 @@
           <span class="tag">Ação</span>
           <span class="tag">Estilizado</span>
         </div>
-        
-        <p>Leo Capybara: Train Rescue é um jogo de ação estilo Beat 'Em Up onde os jogadores acompanham Leo em sua missão para defender seu pai e 
-          os tripulantes de um trem ameaçado por vilões. Como programador principal, desenvolvi sistemas de combate e progressão de fases. 
-          Participei ativamente do design dos níveis, criando sequências de ação envolventes.</p>
-        
-        <a href="https://joojinho13.itch.io/leo-capybara-trains-rescue" target="_blank"><button class="download-btn">Baixar no itch.io</button></a>
+
+        <p>
+          Leo Capybara: Train Rescue é um jogo de ação estilo Beat 'Em Up onde os jogadores acompanham Leo em sua missão para defender seu pai e os tripulantes de um trem ameaçado por vilões.
+          Como programador principal, desenvolvi sistemas de combate e progressão de fases, além de participar ativamente do design dos níveis.
+        </p>
+
+        <a href="https://joojinho13.itch.io/leo-capybara-trains-rescue" target="_blank">
+          <button class="download-btn">Baixar no itch.io</button>
+        </a>
       </div>
     </section>
 
+    <!-- Currículo -->
     <section id="resume" class="tab-content">
-      <h2 class="section-title">Currículo</h2>
-      <p>Você pode baixar meu currículo <a href="./Docs/Curriculo Jogos - João Victor.pdf" target="_blank">Aqui (PDF)</a>.</p>
-      <br>
-      <img src="./Docs/Curriculo Jogos - João Victor.jpg" alt="Currículo em JPG" height="100%" width="600px">
+      <h2 class="text-center">Currículo</h2>
+      <p class="text-center">
+        Você pode baixar meu currículo
+        <a href="./Docs/Curriculo Jogos - João Victor.pdf" target="_blank">aqui (PDF)</a>.
+      </p>
+
+      <div class="image-center">
+        <embed src="./Docs/Curriculo Jogos - João Victor.pdf" type="application/pdf" width="100%" height="750px" />
+      </div>
     </section>
 
+    <!-- Contato -->
     <section id="contact" class="tab-content">
-      <h2 class="section-title">Contato</h2>
-      <p>Email: joaobueno1133@gmail.com</p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/joão-victor-bueno/" target="_blank">Acesse aqui</a></p>
+      <h2 class="text-center">Contato</h2>
+      <p class="text-center">Email: joaobueno1133@gmail.com</p>
+      <p class="text-center">
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/joão-victor-bueno/" target="_blank">Acesse aqui</a>
+      </p>
     </section>
+
   </main>
 
+  <!-- Rodapé -->
   <footer>
     <p>&copy; 2025 João Victor</p>
   </footer>
 
+  <!-- Scripts -->
   <script src="carousel.js"></script>
   <script src="tabNav.js"></script>
+
 </body>
 </html>
