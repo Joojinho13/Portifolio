@@ -1,3 +1,6 @@
+
+---
+
 🌐 Meu Portfólio de Desenvolvedor
 
 Bem-vindo ao repositório do meu site pessoal!
@@ -55,7 +58,7 @@ Sinta-se à vontade para me enviar uma mensagem caso queira conversar sobre opor
 
 Email: joaobueno1133@gmail.com
 
-LinkedIn: João Victor Bueno
+LinkedIn: https://www.linkedin.com/in/jo%C3%A3o-victor-bueno
 
 
 
