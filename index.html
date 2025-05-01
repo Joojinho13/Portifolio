@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfólio João Victor Bueno</title>
+  <title id="nome-digitado">Portfólio João Victor Bueno</title>
   <link rel="icon" href="./Images/FavIcon.png" type="image/x-icon" />
   <link rel="stylesheet" href="./indexStyle.css" />
+
+  <!-- Scripts -->
+  <script src="./carousel.js"></script>
+  <script src="./tabNav.js"></script>
+  <script src="./animationCon.js"></script>
 </head>
 
 <body>
@@ -17,6 +22,7 @@
       <button class="tab-button" data-tab="projects">Projetos</button>
       <button class="tab-button" data-tab="resume">Currículo</button>
       <button class="tab-button" data-tab="contact">Contato</button>
+      <div class="tab-underline"></div>
     </nav>
   </header>
 
@@ -24,9 +30,11 @@
   <main>
 
     <!-- Sobre Mim -->
-    <section id="about" class="tab-content active">
+    <section id="about" class="tab-content active fade-in">
       <div class="about-header">
+
         <img src="./Images/perfilImg.png" alt="Foto de perfil" class="profile-pic" />
+
         <div class="about-text">
           <h1>João Victor Bueno</h1>
           <p>C# Developer | Game Developer</p>
@@ -48,7 +56,7 @@
       <h2 class="text-center">Projetos</h2>
 
       <!-- Projeto: Facing Fear -->
-      <div class="project">
+      <div class="project fade-in">
         <h3>Facing Fear</h3>
 
         <div class="carousel">
@@ -93,7 +101,7 @@
       </div>
 
       <!-- Projeto: Bastard Rebels -->
-      <div class="project">
+      <div class="project fade-in">
         <h3>Bastard Rebels</h3>
 
         <div class="carousel">
@@ -127,14 +135,14 @@
       </div>
 
       <!-- Projeto: Leo Capybara -->
-      <div class="project">
+      <div class="project fade-in">
         <h3>Leo Capybara: Train Rescue</h3>
 
         <div class="carousel">
           <div class="carousel-images">
             <img src="./Images/leoCapybaraimg1.png" alt="Leo Capybara 1">
             <img src="./Images/leoCapybaraimg2.png" alt="Leo Capybara 2">
-            <img src="./Images/leoCapybaraimg3.png" alt="Leo Capybara 3">
+            <img src="./Images/leoCapybaraimg3.png"Leo Capybara 3">
           </div>
 
           <button class="carousel-button prev">❮</button>
@@ -142,8 +150,8 @@
         </div>
 
         <div class="tags">
-          <span class="tag">Unity</span>
-          <span class="tag">C#</span>
+          <span class="tag">Construct</span>
+          <span class="tag">Pixelado</span>
           <span class="tag">Beat 'Em Up</span>
           <span class="tag">2D</span>
           <span class="tag">Ação</span>
@@ -162,7 +170,7 @@
     </section>
 
     <!-- Currículo -->
-    <section id="resume" class="tab-content">
+    <section id="resume" class="tab-content fade-in">
       <h2 class="text-center">Currículo</h2>
       <p class="text-center">
         Você pode baixar meu currículo
@@ -175,7 +183,7 @@
     </section>
 
     <!-- Contato -->
-    <section id="contact" class="tab-content">
+    <section id="contact" class="tab-content fade-in">
       <h2 class="text-center">Contato</h2>
       <p class="text-center">Email: joaobueno1133@gmail.com</p>
       <p class="text-center">
@@ -189,11 +197,7 @@
   <!-- Rodapé -->
   <footer>
     <p>&copy; 2025 João Victor</p>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="carousel.js"></script>
-  <script src="tabNav.js"></script>
+  </footer>  
 
 </body>
 </html>

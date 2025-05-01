@@ -102,16 +102,54 @@ a:hover {
   transition: border-bottom 0.3s;
 }
 
-.tab-button.active {
-  border-bottom: 2px solid var(--primary-color);
-}
-
 .tab-content {
   display: none;
 }
 
 .tab-content.active {
   display: block;
+}
+
+.tab-nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1rem;
+  margin: 0 10px;
+  cursor: pointer;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.tab-underline {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: left 0.3s ease, width 0.3s ease;
+  pointer-events: none;
+}
+
+.tab-button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.tab-button.active::after {
+  width: 100%;
+  left: 0;
 }
 
 /* Sobre Mim */
@@ -145,7 +183,7 @@ a:hover {
   font-size: 1.1rem;
   line-height: 1.6;
 }
-
+/* Imagem de Perfil */
 .profile-pic {
   width: var(--profile-pic-size);
   height: var(--profile-pic-size);
@@ -268,4 +306,28 @@ a:hover {
 /* Sessões Extras */
 .resume, .contact {
   margin-top: 3rem;
+}
+
+/* Animações de entrada */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animação ao mudar de aba */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
