@@ -32,6 +32,7 @@ header, footer {
   text-align: center;
   padding: 2rem;
   background: var(--header-footer-background);
+  position: relative;
 }
 
 main {
@@ -152,6 +153,67 @@ a:hover {
   left: 0;
 }
 
+/* Menu Mobile */
+/* Estilo botão sanduíche */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+/* Menu mobile */
+.mobile-menu {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background: var(--header-footer-background);
+  padding: 1rem;
+  z-index: 999;
+}
+
+/* Mostrar menu mobile quando ativado */
+.mobile-menu.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+
+.mobile-menu .tab-button {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  padding: 1rem;
+  width: 100%;
+  text-align: center; /* Centraliza o texto */
+}
+
+/* Tornar menu visível em telas pequenas */
+@media (max-width: 768px) {
+  .tab-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
 /* Sobre Mim */
 .about-header {
   display: flex;
@@ -183,6 +245,7 @@ a:hover {
   font-size: 1.1rem;
   line-height: 1.6;
 }
+
 /* Imagem de Perfil */
 .profile-pic {
   width: var(--profile-pic-size);
@@ -190,6 +253,32 @@ a:hover {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
+}
+
+/* Sobre Mim (Mobile) */
+@media (max-width: 768px) {
+  .about-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .about-text h1,
+  .about-text h2 {
+    text-align: center;
+  }
+
+  .about-description {
+    text-align: center;
+  }
+
+  .profile-pic {
+    margin-bottom: 1rem;
+  }
 }
 
 /* Projetos */
