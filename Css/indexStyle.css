@@ -1,3 +1,11 @@
+/* Importação de Fomtes */
+@font-face {
+  font-family: 'coolvetica';
+  src: url('/Fontes/Coolvetica.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Variáveis Globais */
 :root {
   /* Cores */
@@ -13,6 +21,17 @@
   --carousel-button-background: rgba(0, 0, 0, 0.5);
   --carousel-button-hover-background: rgba(0, 0, 0, 0.8);
   --border-color: #333;
+  
+  html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Impede scroll lateral */
+  max-width: 100vw;
+}
+
+* {
+  box-sizing: border-box;
+}
   
   /* Dimensões */
   --profile-pic-size: 280px;
@@ -45,12 +64,36 @@ h1, h2 {
   color: var(--primary-color);
 }
 
-a {
+h3 {
+  color: var(--text-color);
+}
+
+/* Títulos de Abas */
+.SB-title {
+  margin-bottom: 3rem;
+}
+
+.tab-title{
+  font-family: 'Coolvetica', Sans-Serif;
+}
+  
+  .tab-title span:first-child {
+  color: var(--text-color);
+  font-size: 30px;
+}
+
+.tab-title span:last-child {
   color: var(--primary-color);
+  font-size: 30px;
+}
+  
+/* Links */
+a {
   text-decoration: none;
 }
 
 a:hover {
+  color: blue;
   text-decoration: underline;
 }
 
@@ -100,7 +143,9 @@ a:hover {
   margin: 0 10px;
   cursor: pointer;
   padding: 10px 20px;
-  transition: border-bottom 0.3s;
+  position: relative;
+  display: inline-block;
+  text-align: center;
 }
 
 .tab-content {
@@ -117,24 +162,8 @@ a:hover {
   justify-content: center;
 }
 
-.tab-button {
-  background: none;
-  border: none;
-  color: var(--primary-color);
-  font-size: 1rem;
-  margin: 0 10px;
-  cursor: pointer;
-  padding: 10px 20px;
-  position: relative;
-}
-
 .tab-underline {
-  position: absolute;
-  bottom: 0;
-  height: 2px;
-  background-color: var(--primary-color);
-  transition: left 0.3s ease, width 0.3s ease;
-  pointer-events: none;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), width 0.4s ease;
 }
 
 .tab-button::after {
@@ -142,15 +171,15 @@ a:hover {
   position: absolute;
   bottom: 0;
   left: 50%;
+  transform: translateX(-50%);
   width: 0%;
   height: 2px;
   background-color: var(--primary-color);
-  transition: width 0.3s ease, left 0.3s ease;
+  transition: width 0.3s ease;
 }
 
 .tab-button.active::after {
-  width: 100%;
-  left: 0;
+  width: 60%;
 }
 
 /* Menu Mobile */
@@ -194,13 +223,19 @@ a:hover {
   pointer-events: auto;
 }
 
-
 .mobile-menu .tab-button {
   margin: 0.5rem 0;
   font-size: 1.2rem;
   padding: 1rem;
-  width: 100%;
+  width: auto;
+  min-width: 100;
   text-align: center; /* Centraliza o texto */
+}
+
+.mobile-menu.closing {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
 }
 
 /* Tornar menu visível em telas pequenas */
@@ -386,12 +421,6 @@ a:hover {
   transition: background-color 0.3s;
 }
 
-.tag:hover {
-  background-color: var(--tag-hover-background);
-  color: var(--tag-hover-text);
-  cursor: default;
-}
-
 /* Sessões Extras */
 .resume, .contact {
   margin-top: 3rem;
@@ -419,4 +448,126 @@ a:hover {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Seção de formulário */
+section.form {
+  padding: 40px 20px;
+  background-color: var(--header-footer-background);
+  color: var(--text-color);
+  text-align: center;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 25px;
+  background-color: #1c1c1c;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 187, 255, 0.15);
+}
+
+form input,
+form textarea {
+  width: 100%;
+  background-color: #2a2a2a;
+  border: 1px solid var(--border-color);
+  outline: none;
+  padding: 15px;
+  border-radius: 12px;
+  color: var(--text-color);
+  font-size: 16px;
+  font-family: inherit;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #bfbfbf;
+}
+
+form textarea {
+  resize: none;
+  height: 120px;
+  max-width: 100%;
+}
+
+form .btn-enviar input[type="submit"] {
+  width: 140px;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+form .btn-enviar input[type="submit"]:hover {
+  background-color: var(--primary-hover-color);
+}
+
+form .btn-enviar input[type="submit"]:active {
+  background-color: var(--primary-active-color);
+}
+
+.text-center {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.text-center a {
+  color: var(--highlight-color);
+  text-decoration: none;
+}
+
+.text-center a:hover {
+  text-decoration: underline;
+}
+
+/* Pop-up confirmação Formulário */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background-color: #1e3d1f; /* tom de verde escuro */
+  padding: 30px 40px;
+  border-radius: 12px;
+  text-align: center;
+  color: #d4ffd4; /* verde claro */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  font-size: 18px;
+}
+
+.popup-content button {
+  margin-top: 20px;
+  background-color: #00c853; /* verde vibrante */
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.popup-content button:hover {
+  background-color: #00b44b;
+}
+
+.hidden {
+  display: none;
 }

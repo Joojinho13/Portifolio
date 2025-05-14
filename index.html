@@ -5,18 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólio João Victor Bueno</title>
   <link rel="icon" href="./Images/FavIcon.png" type="image/x-icon" />
-  <link rel="stylesheet" href="./indexStyle.css" />
+
+  <!--  Linkagem de estilo -->
+  <link rel="stylesheet" href="./Css/indexStyle.css" />
 
   <!-- Scripts -->
-  <script src="./animationCon.js"></script>
-  <script src="./carousel.js"></script>
-  <script src="./tabNav.js"></script>
+  <script src="./Js/animationCon.js"></script>
+  <script src="./Js/carousel.js"></script>
+  <script src="./Js/tabNav.js"></script>
+  <script src="./Js/formSender.js"></script>
+  
 </head>
 
 <body>
 
   <!-- Header / Navegação -->
   <header>
+
     <!-- Menu Hamburguer (Mobile) -->
     <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu">&#9776;</button>
 
@@ -41,8 +46,14 @@
   <main>
 
     <!-- Sobre Mim -->
-    <section id="about" class="tab-content active fade-in">
+    <section id="about" class="text-center tab-content active fade-in">
+      
+      <h2 class="text-center tab-title SB-title">
+        <span>Sobre</span> <span>Mim</span>
+      </h2>
+      
       <div class="about-header">
+        
         <img src="./Images/perfilImg.png" alt="Foto de perfil" class="profile-pic" />
         <div class="about-text">
           <h1>João Victor Bueno</h1>
@@ -50,7 +61,6 @@
         </div>
       </div>
 
-      <h2 class="text-center">Sobre Mim</h2>
       <p class="about-description">
         Oi! Me chamo João Victor, sou desenvolvedor de jogos e apaixonado por transformar ideias malucas em games desde os 8 anos de idade.
         Hoje, com 19, estou no 3º semestre da faculdade de Jogos Digitais, já tendo concluído um curso técnico na área, e sigo me aventurando com Unity e C#.
@@ -61,8 +71,13 @@
     </section>
 
     <!-- Projetos -->
-    <section id="projects" class="tab-content">
-      <h2 class="text-center">Projetos</h2>
+    <section id="projects" class="tab-content fade-in">
+      
+      <h2 class="text-center tab-title">
+        <span>Meus</span> <span>Projetos</span>
+      </h2>
+      
+      <br>
 
       <!-- Projeto: Facing Fear -->
       <div class="project fade-in">
@@ -179,8 +194,14 @@
     </section>
 
     <!-- Currículo -->
-    <section id="resume" class="tab-content fade-in">
-      <h2 class="text-center">Currículo</h2>
+    <section id="resume" class="tab-content fade-in tab-title">
+
+      <h2 class="text-center tab-title">
+        <span>Meu</span> <span>Currículo</span>
+      </h2>
+      
+      <br>
+
       <p class="text-center">
         Você pode baixar meu currículo
         <a href="./Docs/Curriculo Jogos - João Victor.pdf" target="_blank">aqui (PDF)</a>.
@@ -193,18 +214,50 @@
 
     <!-- Contato -->
     <section id="contact" class="tab-content fade-in">
-      <h2 class="text-center">Contato</h2>
+
+      <h2 class="text-center tab-title">
+        <span>Fale</span> <span>Comigo</span>
+      </h2>
+      
+      <br>
+      
+      <section class="form">
+        <form id="contactForm" action="https://formspree.io/f/xvgavgdz" method="POST">
+        <input type="text" name="name" id="name" placeholder="Nome completo:" required />
+        <input type="email" name="email" id="email" placeholder="Email:" required />
+        <textarea name="message" id="message" placeholder="Mensagem:" required></textarea>
+
+        <input type="hidden" name="_subject" value="Nova mensagem do portfólio">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="box">
+
+        <div class="btn-enviar">
+          <input type="submit" value="Enviar">
+        </div>
+        </form>
+      </section>
+      
+      <br>
+
       <p class="text-center">Email: joaobueno1133@gmail.com</p>
       <p class="text-center">
         LinkedIn:
-        <a href="https://www.linkedin.com/in/joão-victor-bueno/" target="_blank">Acesse aqui</a>
+        <a href="https://www.linkedin.com/in/joão-victor-bueno/" target="_blank" class="link">Acesse aqui</a>
       </p>
     </section>
 
-  </main>
+    <div id="popupSuccess" class="popup hidden">
+
+      <div class="popup-content">
+        <p>Mensagem enviada com sucesso!</p>
+        <button id="closePopup">OK</button>
+      </div>
+    </div>
+  </div>
+</main>
 
   <!-- Rodapé -->
-  <footer>
+  <footer>  
     <p>&copy; 2025 João Victor</p>
   </footer>  
 
