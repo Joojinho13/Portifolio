@@ -1,0 +1,110 @@
+/* Importação de Fontes */
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('/Fontes/Coolvetica.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Variáveis Globais */
+:root {
+  --background-color: #121212;
+  --header-footer-background: #1f1f1f;
+  --primary-color: #00bbff;
+  --primary-hover-color: #0093b1;
+  --primary-active-color: #006a8e;
+  --text-color: #f0f0f0;
+  --tag-background: #292929;
+  --tag-hover-background: #00bbff;
+  --tag-hover-text: #121212;
+  --carousel-button-background: rgba(0, 0, 0, 0.5);
+  --carousel-button-hover-background: rgba(0, 0, 0, 0.8);
+  --border-color: #333;
+  --profile-pic-size: 280px;
+  --carousel-max-height: 500px;
+  --button-size: 50px;
+}
+
+/* Reset e Base */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+
+  font-family: Arial, sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Tipografia */
+h1, h2 {
+  color: var(--primary-color);
+}
+
+h3 {
+  color: var(--text-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-hover-color);
+  text-decoration: underline;
+}
+
+/* Utilitários */
+.text-center {
+  text-align: center;
+}
+
+.body-text {
+  font-family: 'Coolvetica', sans-serif;
+  font-size: 20px; 
+  letter-spacing: 0.5px;
+}
+
+.image-center {
+  text-align: center;
+}
+
+/* Estrutura Principal */
+header, footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--header-footer-background);
+  position: relative;
+}
+
+main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Animações */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Classes de Estado */
+.hidden {
+  display: none;
+}

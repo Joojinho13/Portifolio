@@ -1,265 +1,229 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólio João Victor Bueno</title>
-  <link rel="icon" href="./Images/FavIcon.png" type="image/x-icon" />
+  <link rel="icon" href="./Icons/FavIcon.svg" type="image/x-icon" />
 
-  <!--  Linkagem de estilo -->
-  <link rel="stylesheet" href="./Css/indexStyle.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="./Css/base.css" />
+  <link rel="stylesheet" href="./Css/components.css" />
+  <link rel="stylesheet" href="./Css/sections.css" />
 
   <!-- Scripts -->
-  <script src="./Js/animationCon.js"></script>
-  <script src="./Js/carousel.js"></script>
-  <script src="./Js/tabNav.js"></script>
-  <script src="./Js/formSender.js"></script>
-  
+  <script src="./Js/animationCon.js" defer></script>
+  <script src="./Js/carousel.js" defer></script>
+  <script src="./Js/tabNav.js" defer></script>
+  <script src="./Js/formSender.js" defer></script>
 </head>
 
 <body>
-
-  <!-- Header / Navegação -->
+  <!-- Header -->
   <header>
+    <!-- Botão hambúrguer (mobile) -->
+    <button id="hamburgerBtn" class="hamburger" aria-label="Abrir menu">&#9776;</button>
 
-    <!-- Menu Hamburguer (Mobile) -->
-    <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu">&#9776;</button>
-
-    <!-- Menu mobile -->
-    <div class="mobile-menu" id="mobileMenu">
-      <button class="tab-button" data-tab="about">Sobre Mim</button>
-      <button class="tab-button" data-tab="projects">Projetos</button>
-      <button class="tab-button" data-tab="resume">Currículo</button>
-      <button class="tab-button" data-tab="contact">Contato</button>
-    </div>
-
-    <nav class="tab-nav">
-      <button class="tab-button active" data-tab="about">Sobre Mim</button>
-      <button class="tab-button" data-tab="projects">Projetos</button>
-      <button class="tab-button" data-tab="resume">Currículo</button>
-      <button class="tab-button" data-tab="contact">Contato</button>
+    <!-- Navegação desktop -->
+    <nav class="tab-nav" role="tablist">
+      <button class="tab-button active" role="tab" aria-selected="true" aria-controls="hero" data-tab="hero">Sobre Mim</button>
+      <button class="tab-button" role="tab" aria-selected="false" aria-controls="projetos" data-tab="projetos">Projetos</button>
+      <button class="tab-button" role="tab" aria-selected="false" aria-controls="curriculo" data-tab="curriculo">Currículo</button>
+      <button class="tab-button" role="tab" aria-selected="false" aria-controls="contato" data-tab="contato">Contato</button>
       <div class="tab-underline"></div>
     </nav>
+
+    <!-- Menu mobile -->
+    <div id="mobileMenu" class="mobile-menu" role="tablist">
+      <button class="tab-button" role="tab" aria-selected="true" aria-controls="hero" data-tab="hero">Sobre Mim</button>
+      <button class="tab-button" role="tab" aria-selected="false" aria-controls="projetos" data-tab="projetos">Projetos</button>
+      <button class="tab-button" role="tab" aria-selected="false" aria-controls="curriculo" data-tab="curriculo">Currículo</button>
+      <button class="tab-button" role="tab" aria-selected="false" aria-controls="contato" data-tab="contato">Contato</button>
+    </div>
   </header>
 
   <!-- Conteúdo principal -->
   <main>
+    <!-- Seção Hero -->
+    <section id="hero" class="tab-content active fade-in" role="tabpanel">
+      <h2 class="text-center tab-title SB-title"><span>Sobre</span> <span>Mim</span></h2>
 
-    <!-- Sobre Mim -->
-    <section id="about" class="text-center tab-content active fade-in">
-      
-      <h2 class="text-center tab-title SB-title">
-        <span>Sobre</span> <span>Mim</span>
-      </h2>
-      
-      <div class="about-header">
-        
-        <img src="./Images/perfilImg.png" alt="Foto de perfil" class="profile-pic" />
-        <div class="about-text">
+      <div class="about-container">
+        <!-- Coluna Esquerda -->
+        <div class="about-left">
+          <div class="hero-img-container">
+            <img src="./Images/perfilImg.png" alt="Foto de perfil" class="profile-pic animated-border" />
+          </div>
+
+          <!-- Habilidades -->
+          <div class="skills-container">
+            <h3>Minhas Habilidades</h3>
+            <div class="skills-grid">
+              <div class="skill-badge">
+                <img src="./Icons/unity-icon.svg" alt="Unity" />
+                <span>Unity</span>
+              </div>
+              <div class="skill-badge">
+                <img src="./Icons/csharp-icon.svg" alt="C#" />
+                <span>C#</span>
+              </div>
+              <div class="skill-badge">
+                <img src="./Icons/github-icon.svg" alt="Github" />
+                <span>Github</span>
+              </div>
+              <div class="skill-badge">
+                <img src="./Icons/game-design-icon.svg" alt="Game Design" />
+                <span>Game Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna Direita -->
+        <div class="about-right">
           <h1>João Victor Bueno</h1>
-          <p>C# Developer | Game Developer</p>
+          <p class="subtitle">C# Developer | Game Developer</p>
+
+          <div class="bio-text">
+            <p>Oi! Me chamo João Victor, sou desenvolvedor de jogos e apaixonado por transformar ideias malucas em games desde os 8 anos de idade. Hoje, com 19, estou no 4º semestre da faculdade de Jogos Digitais, já tendo concluído um curso técnico na área.</p>
+            <p>Amo fazer jogos desde criança e um dia espero poder mostrar e ensinar essa minha paixão a todos. Meu foco atual é em desenvolvimento com Unity e C#, criando experiências envolventes e inovadoras.</p>
+          </div>
+
+          <!-- CTA -->
+          <div class="hero-cta">
+            <button class="cta-button primary tab-button" data-tab="projetos" aria-controls="projetos">Projetos</button>
+            <button class="cta-button secondary tab-button" data-tab="contato" aria-controls="contato">Contato</button>
+          </div>
         </div>
       </div>
-
-      <p class="about-description">
-        Oi! Me chamo João Victor, sou desenvolvedor de jogos e apaixonado por transformar ideias malucas em games desde os 8 anos de idade.
-        Hoje, com 19, estou no 3º semestre da faculdade de Jogos Digitais, já tendo concluído um curso técnico na área, e sigo me aventurando com Unity e C#.
-        Tenho uma personalidade alegre e descontraída, gosto de trabalhar em equipe e acredito que o desenvolvimento de jogos deve ser tão divertido quanto jogar.
-        Além de programar, também curto muito ajudar na organização dos projetos e no design dos níveis.
-        Amo fazer jogos desde criança e um dia espero poder mostrar e ensinar essa minha paixão a todos.
-      </p>
     </section>
 
-    <!-- Projetos -->
-    <section id="projects" class="tab-content fade-in">
-      
-      <h2 class="text-center tab-title">
-        <span>Meus</span> <span>Projetos</span>
-      </h2>
-      
+    <!-- Seção Projetos -->
+    <section id="projetos" class="tab-content fade-in" role="tabpanel">
+      <h2 class="text-center tab-title"><span>Meus</span> <span>Projetos</span></h2>
       <br>
 
       <!-- Projeto: Facing Fear -->
       <div class="project fade-in">
         <h3>Facing Fear</h3>
-
         <div class="carousel">
           <div class="carousel-images">
             <img src="./Images/facinfFearImg1.png" alt="Facing Fear 1">
-
             <div class="video-slide">
-              <iframe 
-                src="https://www.youtube.com/embed/qt5UTe-cbPM?si=9qSaPvNoMM41vgRu"
-                title="Trailer Facing Fear"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-              </iframe>
+              <iframe src="https://www.youtube.com/embed/qt5UTe-cbPM?si=9qSaPvNoMM41vgRu"
+                      title="Trailer Facing Fear"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen></iframe>
             </div>
-
             <img src="./Images/facinfFearImg2.png" alt="Facing Fear 2">
             <img src="./Images/facinfFearImg3.png" alt="Facing Fear 3">
           </div>
-
           <button class="carousel-button prev">❮</button>
           <button class="carousel-button next">❯</button>
-
           <div class="tags">
-            <span class="tag">Unity</span>
-            <span class="tag">C#</span>
-            <span class="tag">Multiplayer</span>
-            <span class="tag">Terror</span>
-            <span class="tag">Cooperativo</span>
-            <span class="tag">3D</span>
+            <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Multiplayer</span><span class="tag">Terror</span><span class="tag">Cooperativo</span><span class="tag">3D</span>
           </div>
         </div>
-
-        <p>
-          Facing Fear é um jogo cooperativo de terror que desafia os jogadores a enfrentarem suas fobias enquanto exploram ambientes sombrios em busca de chaves para escapar.
-          Como programador principal, implementei sistemas de jogabilidade e lógica de jogo, além de colaborar no design dos níveis para criar uma atmosfera imersiva.
-          Também fui responsável por organizar e integrar as funcionalidades de multiplayer, garantindo uma experiência cooperativa fluida.
-        </p>
-
-        <a href="https://garapagames.itch.io/facingfear" target="_blank">
-          <button class="download-btn">Baixar no itch.io</button>
-        </a>
+        <p>Facing Fear é um jogo cooperativo de terror que desafia os jogadores a enfrentarem suas fobias enquanto exploram ambientes sombrios em busca de chaves para escapar...</p>
+        <a href="https://garapagames.itch.io/facingfear" target="_blank"><button class="download-btn">Baixar no itch.io</button></a>
       </div>
 
       <!-- Projeto: Bastard Rebels -->
       <div class="project fade-in">
         <h3>Bastard Rebels</h3>
-
         <div class="carousel">
           <div class="carousel-images">
             <img src="./Images/bastardRebelsImg1.png" alt="Bastard Rebels 1">
             <img src="./Images/bastardRebelsImg2.png" alt="Bastard Rebels 2">
             <img src="./Images/bastardRebelsImg3.png" alt="Bastard Rebels 3">
           </div>
-
           <button class="carousel-button prev">❮</button>
           <button class="carousel-button next">❯</button>
-
           <div class="tags">
-            <span class="tag">Unity</span>
-            <span class="tag">C#</span>
-            <span class="tag">Pixel Art</span>
-            <span class="tag">2D</span>
-            <span class="tag">Estilizado</span>
+            <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Pixel Art</span><span class="tag">2D</span><span class="tag">Estilizado</span>
           </div>
         </div>
-
-        <p>
-          Bastard Rebels é um jogo de plataforma em pixel art ambientado em um mundo distópico habitado por mutantes criados pela humanidade.
-          Atuei como programador principal, desenvolvendo as mecânicas de movimentação, combate e interação com o ambiente.
-          Contribuí significativamente para o design dos níveis, criando desafios que complementam a narrativa.
-        </p>
-
-        <a href="https://garapagames.itch.io/bastard-rebels" target="_blank">
-          <button class="download-btn">Baixar no itch.io</button>
-        </a>
+        <p>Bastard Rebels é um jogo de plataforma em pixel art ambientado em um mundo distópico...</p>
+        <a href="https://garapagames.itch.io/bastard-rebels" target="_blank"><button class="download-btn">Baixar no itch.io</button></a>
       </div>
 
       <!-- Projeto: Leo Capybara -->
       <div class="project fade-in">
         <h3>Leo Capybara: Train Rescue</h3>
-
         <div class="carousel">
           <div class="carousel-images">
             <img src="./Images/leoCapybaraimg1.png" alt="Leo Capybara 1">
             <img src="./Images/leoCapybaraimg2.png" alt="Leo Capybara 2">
             <img src="./Images/leoCapybaraimg3.png" alt="Leo Capybara 3">
           </div>
-
           <button class="carousel-button prev">❮</button>
           <button class="carousel-button next">❯</button>
         </div>
-
         <div class="tags">
-          <span class="tag">Construct</span>
-          <span class="tag">Pixelado</span>
-          <span class="tag">Beat 'Em Up</span>
-          <span class="tag">2D</span>
-          <span class="tag">Ação</span>
-          <span class="tag">Estilizado</span>
+          <span class="tag">Construct</span><span class="tag">Pixelado</span><span class="tag">Beat 'Em Up</span><span class="tag">2D</span><span class="tag">Ação</span><span class="tag">Estilizado</span>
         </div>
-
-        <p>
-          Leo Capybara: Train Rescue é um jogo de ação estilo Beat 'Em Up onde os jogadores acompanham Leo em sua missão para defender seu pai e os tripulantes de um trem ameaçado por vilões.
-          Como programador principal, desenvolvi sistemas de combate e progressão de fases, além de participar ativamente do design dos níveis.
-        </p>
-
-        <a href="https://joojinho13.itch.io/leo-capybara-trains-rescue" target="_blank">
-          <button class="download-btn">Baixar no itch.io</button>
-        </a>
+        <p>Leo Capybara: Train Rescue é um jogo de ação estilo Beat 'Em Up...</p>
+        <a href="https://joojinho13.itch.io/leo-capybara-trains-rescue" target="_blank"><button class="download-btn">Baixar no itch.io</button></a>
       </div>
     </section>
 
-    <!-- Currículo -->
-    <section id="resume" class="tab-content fade-in tab-title">
-
-      <h2 class="text-center tab-title">
-        <span>Meu</span> <span>Currículo</span>
-      </h2>
-      
+    <!-- Seção Currículo -->
+    <section id="curriculo" class="tab-content fade-in" role="tabpanel">
+      <h2 class="text-center tab-title"><span>Meu</span> <span>Currículo</span></h2>
       <br>
-
-      <p class="text-center">
-        Você pode baixar meu currículo
-        <a href="./Docs/Curriculo Jogos - João Victor.pdf" target="_blank">aqui (PDF)</a>.
-      </p>
-
+      <p class="text-center body-text">Você pode baixar meu currículo <a href="./Docs/Curriculo Jogos - João Victor.pdf" target="_blank">aqui (PDF)</a>.</p>
       <div class="image-center">
         <embed src="./Docs/Curriculo Jogos - João Victor.pdf" type="application/pdf" width="100%" height="750px" />
       </div>
     </section>
 
-    <!-- Contato -->
-    <section id="contact" class="tab-content fade-in">
-
-      <h2 class="text-center tab-title">
-        <span>Fale</span> <span>Comigo</span>
-      </h2>
+    <!-- Seção Contato -->
+    <section id="contato" class="tab-content fade-in">
+      <h2 class="text-center tab-title"><span>Fale</span> <span>Comigo</span></h2>
       
-      <br>
-      
-      <section class="form">
-        <form id="contactForm" action="https://formspree.io/f/xvgavgdz" method="POST">
-        <input type="text" name="name" id="name" placeholder="Nome completo:" required />
-        <input type="email" name="email" id="email" placeholder="Email:" required />
-        <textarea name="message" id="message" placeholder="Mensagem:" maxlength="500" ></textarea>
-
-        <input type="hidden" name="_subject" value="Nova mensagem do portfólio">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="box">
-
-        <div class="btn-enviar">
-          <input type="submit" value="Enviar">
+      <div class="contact-container">
+        <!-- Coluna Esquerda: Formulário -->
+        <div class="contact-form">
+          <form id="contactForm" action="https://formspree.io/f/xvgavgdz" method="POST">
+            <input type="text" name="name" placeholder="Nome completo:" required />
+            <input type="email" name="email" placeholder="Email:" required />
+            <textarea name="message" placeholder="Mensagem:" maxlength="500"></textarea>
+            <input type="hidden" name="_subject" value="Nova mensagem do portfólio">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="box">
+            <div class="btn-enviar"><input type="submit" value="Enviar"></div>
+          </form>
         </div>
-        </form>
-      </section>
-      
-      <br>
-
-      <p class="text-center">Email: joaobueno1133@gmail.com</p>
-      <p class="text-center">
-        LinkedIn:
-        <a href="https://www.linkedin.com/in/joão-victor-bueno/" target="_blank" class="link">Acesse aqui</a>
-      </p>
+        
+        <!-- Coluna Direita: Informações de Contato -->
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-icon email-icon">
+              <img src="./Icons/email-icon.svg" alt="Email">
+            </div>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <a href="mailto:joaobueno1133@gmail.com" class="link">joaobueno1133@gmail.com</a>
+            </div>
+          </div>
+          
+          <div class="contact-card">
+            <div class="contact-icon linkedin-icon">
+              <img src="./Icons/linkedin-icon.svg" alt="LinkedIn">
+            </div>
+            <div class="contact-details">
+              <h3>LinkedIn</h3>
+              <a href="https://www.linkedin.com/in/joão-victor-bueno/" target="_blank" class="link">Meu Perfil</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <div id="popupSuccess" class="popup hidden">
-
-      <div class="popup-content">
-        <p>Mensagem enviada com sucesso!</p>
-        <button id="closePopup">OK</button>
-      </div>
-    </div>
-  </div>
-</main>
-
   <!-- Rodapé -->
-  <footer>  
+  <br>
+  <footer>
     <p>&copy; 2025 João Victor</p>
-  </footer>  
-
+  </footer>
 </body>
 </html>

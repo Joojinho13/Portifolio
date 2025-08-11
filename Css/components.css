@@ -1,0 +1,472 @@
+/* =======================
+   Botões padrão
+======================= */
+.download-btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.download-btn:hover {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-2px);
+}
+
+.download-btn:active {
+  background-color: var(--primary-active-color);
+  transform: translateY(0);
+}
+
+/* =======================
+   Sistema de Abas
+======================= */
+.tab-nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 18px;
+  margin: 0 10px;
+  cursor: pointer;
+  padding: 10px 20px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.tab-button:hover,
+.tab-button[aria-selected="true"] {
+  color: var(--primary-hover-color);
+} 
+
+.tab-underline {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  background-color: var(--primary-color);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Conteúdo das abas */
+.tab-content {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tab-content.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =======================
+   Menu Mobile
+======================= */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 1rem;
+  z-index: 1000;
+  transition: transform 0.2s ease;
+  position: absolute; /* Adicionado */
+  left: 50%; /* Adicionado */
+  transform: translateX(-50%); /* Adicionado */
+}
+
+.hamburger:hover {
+  transform: translateX(-50%) scale(1.1); /* Modificado para manter a centralização */
+}
+
+/* Restante do seu CSS permanece igual */
+.mobile-menu {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background: var(--header-footer-background);
+  padding: 1rem;
+  z-index: 999;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* ... resto do seu CSS ... */
+
+.mobile-menu.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mobile-menu .tab-button {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.mobile-menu .tab-button:hover,
+.mobile-menu .tab-button[aria-selected="true"] {
+  background-color: var(--primary-hover-color);
+  color: #fff;
+}
+
+.mobile-menu.closing {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+/* Mostrar botão hamburger em telas pequenas */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: relative;
+  }
+
+  .tab-nav {
+    display: none;
+  }
+}
+
+/* =======================
+   Carrossel
+======================= */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.carousel-images img,
+.carousel-images .video-slide {
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 10px;
+  object-fit: cover;
+  max-height: var(--carousel-max-height);
+}
+
+.video-slide {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.video-slide iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--carousel-button-background);
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 1;
+  border-radius: 50%;
+  transition: background 0.3s, transform 0.2s;
+  width: var(--button-size);
+  height: var(--button-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-button:hover {
+  background-color: var(--carousel-button-hover-background);
+  transform: scale(1.05);
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+/* =======================
+   Tags
+======================= */
+.tags {
+  margin-top: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  background-color: var(--tag-background);
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  margin: 4px 4px 0 0;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.tag:hover {
+  background-color: var(--primary-hover-color);
+  color: #fff;
+}
+
+/* =======================
+   Formulário
+======================= */
+section.form {
+  padding: 40px 20px;
+  background-color: var(--header-footer-background);
+  color: var(--text-color);
+  text-align: center;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 25px;
+  background-color: #1c1c1c;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 187, 255, 0.15);
+}
+
+form input,
+form textarea {
+  width: 100%;
+  background-color: #2a2a2a;
+  border: 1px solid var(--border-color);
+  outline: none;
+  padding: 15px;
+  border-radius: 12px;
+  color: var(--text-color);
+  font-size: 16px;
+  font-family: inherit;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #bfbfbf;
+}
+
+form textarea {
+  resize: none;
+  height: 120px;
+  max-width: 100%;
+}
+
+form .btn-enviar input[type="submit"] {
+  width: 140px;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+}
+
+form .btn-enviar input[type="submit"]:hover {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-2px);
+}
+
+form .btn-enviar input[type="submit"]:active {
+  background-color: var(--primary-active-color);
+  transform: translateY(0);
+}
+
+/* =======================
+   Seção Contato
+======================= */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  max-width: 550px;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 350px;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Cards de contato */
+.contact-card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  padding: 25px;
+  background: rgba(41, 41, 41, 0.5);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 187, 255, 0.2);
+  background: rgba(41, 41, 41, 0.7);
+}
+
+.contact-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.email-icon {
+  background: linear-gradient(135deg, var(--primary-color), #0062ff);
+}
+
+.linkedin-icon {
+  background: linear-gradient(135deg, #0a66c2, #00a0dc);
+}
+
+.contact-icon img {
+  width: 40px;
+  height: 40px;
+  filter: invert(1);
+}
+
+.contact-card:hover .contact-icon {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 187, 255, 0.4);
+}
+
+.contact-details h3 {
+  color: var(--primary-color);
+  margin: 0 0 10px 0;
+  font-size: 1.4rem;
+}
+
+.contact-details a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* =======================
+   Popup
+======================= */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.popup:not(.hidden) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popup-content {
+  background-color: #1e3d1f;
+  padding: 30px 40px;
+  border-radius: 12px;
+  text-align: center;
+  color: #d4ffd4;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  font-size: 18px;
+}
+
+.popup-content button {
+  margin-top: 20px;
+  background-color: #00c853;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.popup-content button:hover {
+  background-color: #00b44b;
+}

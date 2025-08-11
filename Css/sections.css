@@ -1,0 +1,250 @@
+/* Títulos de Abas */
+.SB-title {
+  margin-bottom: 3rem;
+}
+
+.tab-title {
+  font-family: 'Coolvetica', Sans-Serif;
+}
+
+.tab-title span:first-child {
+  color: var(--text-color);
+  font-size: 30px;
+}
+
+.tab-title span:last-child {
+  color: var(--primary-color);
+  font-size: 30px;
+}
+
+/* Seção Hero (Sobre Mim) */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about-left, .about-right {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.hero-img-container {
+  position: relative;
+  width: var(--profile-pic-size);
+  height: var(--profile-pic-size);
+  margin: 0 auto 2rem;
+}
+
+.profile-pic.animated-border {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  padding: 3px; /* Reduzi para melhorar o efeito */
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    #00e1ff,
+    #0062ff,
+    var(--primary-color)
+  );
+  background-size: 300% 300%;
+  animation: gradient-border 4s ease infinite;
+  box-shadow: 0 0 10px rgba(0, 187, 255, 0.5);
+}
+
+@keyframes gradient-border {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.profile-pic.animated-border {
+  animation: border-pulse 2s infinite;
+}
+
+.profile-pic.animated-border:hover {
+  animation-duration: 1s;
+  transform: scale(1.02);
+}
+
+/* Habilidades */
+.skills-container {
+  text-align: center;
+  background: rgba(41, 41, 41, 0.3);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skills-container h3 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.skill-badge {
+  background: var(--tag-background);
+  border-radius: 20px;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+  background: var(--tag-hover-background);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 187, 255, 0.2);
+}
+
+.skill-badge:hover span {
+  color: var(--text-color);
+}
+
+.skill-badge img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.skill-badge span {
+  font-weight: bold;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+/* História */
+.about-right {
+  text-align: left;
+}
+
+.about-right h1 {
+  color: var(--primary-color);
+  margin-top: 0;
+  font-size: 2.5rem;
+}
+
+.subtitle {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  margin: -0.5rem 0 1.5rem;
+  font-weight: normal;
+}
+
+.bio-text p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* Hero CTA */
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.cta-button {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: none;
+}
+
+/* Botão Primário (Contato) */
+.cta-button.primary {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 187, 255, 0.3);
+}
+
+/* Botão Secundário (Projetos) */
+.cta-button.secondary {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Efeitos Hover */
+.cta-button.primary:hover {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 187, 255, 0.4);
+}
+
+.cta-button.secondary:hover {
+  background: rgba(0, 187, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Efeito ao clicar */
+.cta-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(0, 187, 255, 0.4);
+}
+
+/* Seção Projetos */
+.project {
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 10px;
+  background: rgba(41, 41, 41, 0.3);
+}
+
+.project-image {
+  width: 100%;
+  max-height: var(--carousel-max-height);
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+/* Seções Adicionais */
+.resume, .contact {
+  margin-top: 3rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .about-left, .about-right {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+  
+  .about-right {
+    text-align: center;
+  }
+  
+  .tab-nav {
+    overflow: hidden;
+  }
+}
