@@ -204,7 +204,6 @@
 .carousel-button {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   background-color: var(--carousel-button-background);
   color: #fff;
   border: none;
@@ -234,6 +233,26 @@
   right: 10px;
 }
 
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.carousel-indicators .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #888;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.carousel-indicators .dot.active {
+  background: var(--primary-color);
+}
 /* =======================
    Tags
 ======================= */
@@ -405,13 +424,13 @@ form .btn-enviar input[type="submit"]:active {
 }
 
 .contact-details h3 {
-  color: var(--primary-color);
+  color: var(--text-color);
   margin: 0 0 10px 0;
   font-size: 1.4rem;
 }
 
 .contact-details a {
-  color: var(--text-color);
+  color: var(--primary-color);
   text-decoration: none;
   font-size: 1.1rem;
   transition: color 0.3s ease;
