@@ -98,22 +98,27 @@
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
-  .about-left {
-    order: 1; /* primeiro: foto */
+  .about-left,
+  .about-right {
+    margin: 0 auto;
+    max-width: 90%;
   }
 
   .about-right {
-    order: 2; /* segundo: nome + descrição */
-  }
-
-  .skills-container {
-    order: 3; /* terceiro: skills */
+    text-align: center;
   }
 
   .hero-cta {
-    order: 4; /* quarto: botões */
+    justify-content: center;
+  }
+
+  .skills-container {
+    display: none;
   }
 }
 
