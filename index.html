@@ -40,6 +40,12 @@
       <button class="tab-button" role="tab" aria-selected="false" aria-controls="curriculo" data-tab="curriculo" id="curriculo-mobile-tab">Currículo</button>
       <button class="tab-button" role="tab" aria-selected="false" aria-controls="contato" data-tab="contato" id="contato-mobile-tab">Contato</button>
     </div>
+
+    <!-- Botão de idioma -->
+    <div class="lang-switcher">
+      <button id="translate-pt" class="lang-btn" translate="no">🇧🇷 PT</button>
+      <button id="translate-en" class="lang-btn" translate="no">🇺🇸 EN</button>
+    </div>
   </header>
 
   <!-- Conteúdo principal -->
@@ -68,12 +74,12 @@
                 <span>C#</span>
               </div>
               <div class="skill-badge">
-                <img src="./Icons/github-icon.svg" alt="Github" />
-                <span>Github</span>
-              </div>
-              <div class="skill-badge">
                 <img src="./Icons/game-design-icon.svg" alt="Game Design" />
                 <span>Game Design</span>
+              </div>
+              <div class="skill-badge">
+                <img src="./Icons/github-icon.svg" alt="Github" />
+                <span>Github</span>
               </div>
             </div>
           </div>
@@ -123,14 +129,14 @@
           </div>
           <button class="carousel-button prev" aria-label="Slide anterior">❮</button>
           <button class="carousel-button next" aria-label="Próximo slide">❯</button>
-          <div class="tags">
-            <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Multiplayer</span><span class="tag">Terror</span><span class="tag">Cooperativo</span><span class="tag">3D</span>
-          </div>
+        </div>
+        <div class="tags">
+          <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Multiplayer</span><span class="tag">Terror</span><span class="tag">Cooperativo</span><span class="tag">3D</span>
         </div>
         <p>Facing Fear é um jogo cooperativo de terror que desafia os jogadores <br> a enfrentarem suas fobias enquanto exploram ambientes sombrios em <br> busca de chaves para escapar.</p>
         <p class="project-role"><strong>Meu papel:</strong> Programador principal, Game Designer</p>
         <br>
-        <a href="https://garapagames.itch.io/facingfear" target="_blank" rel="noopener noreferrer"><button class="download-btn">Baixar no itch.io</button></a>
+        <a href="https://garapagames.itch.io/facingfear" target="_blank" rel="noopener noreferrer"><button class="download-btn">Baixar no Itch.io</button></a>
       </div>
 
       <!-- Projeto: Bastard Rebels -->
@@ -145,13 +151,14 @@
           </div>
           <button class="carousel-button prev" aria-label="Slide anterior">❮</button>
           <button class="carousel-button next" aria-label="Próximo slide">❯</button>
-          <div class="tags">
-            <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Pixel Art</span><span class="tag">2D</span><span class="tag">Estilizado</span>
-          </div>
-        </div>Bastard Rebels é um jogo de plataforma em pixel art ambientado <br> em um mundo distópico habitado por mutantes criados pela humanidade.</p>
+        </div>
+        <div class="tags">
+          <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Pixel Art</span><span class="tag">2D</span><span class="tag">Estilizado</span>
+        </div>
+        <p>Bastard Rebels é um jogo de plataforma em pixel art ambientado <br> em um mundo distópico habitado por mutantes criados pela humanidade.</p>
         <p class="project-role"><strong>Meu papel:</strong> Desenvolvedor de mecânicas, Level Design</p>
         <br>
-        <a href="https://garapagames.itch.io/bastard-rebels" target="_blank" rel="noopener noreferrer"><button class="download-btn">Baixar no itch.io</button></a>
+        <a href="https://garapagames.itch.io/bastard-rebels" target="_blank" rel="noopener noreferrer"><button class="download-btn">Baixar no Itch.io</button></a>
       </div>
 
       <!-- Projeto: Leo Capybara -->
@@ -173,7 +180,7 @@
         <p>Leo Capybara: Train Rescue é um jogo de ação estilo Beat 'Em Up <br> onde os jogadores acompanham Leo em sua missão para defender <br> seu pai e os tripulantes de um trem ameaçado por vilões</p>
         <p class="project-role"><strong>Meu papel:</strong> Level Design, Programador de sistemas</p>
         <br>
-        <a href="https://joojinho13.itch.io/leo-capybara-trains-rescue" target="_blank" rel="noopener noreferrer"><button class="download-btn">Baixar no itch.io</button></a>
+        <a href="https://joojinho13.itch.io/leo-capybara-trains-rescue" target="_blank" rel="noopener noreferrer"><button class="download-btn">Baixar no Itch.io</button></a>
       </div>
     </section>
 
@@ -199,7 +206,7 @@
         <div class="resume-summary">
           <h4>Resumo do Currículo</h4>
           <ul>
-            <li><strong>Formação:</strong> Tecnologia em Jogos Digitais - FATEC Carapicuíba</li>
+            <li><strong>Formação:</strong> <br> Tecnologia em Jogos Digitais - FATEC <br> Técnico em Jogos Digitais - SENAC</li>
             <li><strong>Principais Habilidades:</strong> Unity, C#, Game Design, GitHub</li>
             <li><strong>Projetos Relevantes:</strong> Facing Fear, Bastard Rebels, Leo Capybara</li>
           </ul>
@@ -250,5 +257,9 @@
       </div>
     </section>
   </main>
+  <!-- Google Translate escondido -->
+  <div id="google_translate_element" style="display:none;"></div>
+  <script src="./Js/translate.js" defer></script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

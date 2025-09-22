@@ -26,6 +26,39 @@
 }
 
 /* =======================
+   Botões Troca de Idioma
+======================= */
+.lang-switcher {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.lang-btn {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.lang-btn:hover {
+  background: var(--primary-hover-color);
+  transform: translateY(-2px);
+}
+
+.lang-btn:active {
+  background: var(--primary-active-color);
+  transform: translateY(0);
+}
+
+/* =======================
    Sistema de Abas
 ======================= */
 .tab-nav {
@@ -91,16 +124,15 @@
   padding: 1rem;
   z-index: 1000;
   transition: transform 0.2s ease;
-  position: absolute; /* Adicionado */
-  left: 50%; /* Adicionado */
-  transform: translateX(-50%); /* Adicionado */
+  position: absolute; 
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .hamburger:hover {
-  transform: translateX(-50%) scale(1.1); /* Modificado para manter a centralização */
+  transform: translateX(-50%) scale(1.1);
 }
 
-/* Restante do seu CSS permanece igual */
 .mobile-menu {
   opacity: 0;
   transform: translateY(-10px);
@@ -117,8 +149,6 @@
   z-index: 999;
   border-bottom: 1px solid var(--border-color);
 }
-
-/* ... resto do seu CSS ... */
 
 .mobile-menu.active {
   opacity: 1;
